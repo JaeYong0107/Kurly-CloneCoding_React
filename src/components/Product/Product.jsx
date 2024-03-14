@@ -5,7 +5,7 @@ export default function Product(props) {
     const discountPrice = (100 - props.discount) * props.price / 100
 
     return (
-        <li className='product' id={props.id}>
+        <li className='product'>
             <div className='img-container'>
                 <img src={props.image} />
             </div>

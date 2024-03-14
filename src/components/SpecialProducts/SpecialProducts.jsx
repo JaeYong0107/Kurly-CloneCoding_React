@@ -15,7 +15,7 @@ export default function SpecialProducts() {
             <div className='product-container'>
                 <ul>
                     {specialPriceDummyData.map((product) => (
-                        <Product {...product} />
+                        <Product key={product.id} {...product} />
                     ))}
                 </ul>
                 <button className='next-button' />
