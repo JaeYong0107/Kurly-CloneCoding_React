@@ -1,3 +1,6 @@
+
+import './Product.css'
+
 export default function Product(props) {
     const discountPrice = (100 - props.discount) * props.price / 100
 
@@ -6,7 +9,7 @@ export default function Product(props) {
             <div className='img-container'>
                 <img src={props.image} />
             </div>
-            <button>
+            <button className='product-button'>
                 <img src='장바구니-icon.svg' />
                 담기
             </button>

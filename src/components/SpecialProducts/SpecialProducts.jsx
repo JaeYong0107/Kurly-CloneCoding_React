@@ -1,6 +1,6 @@
 
 import specialPriceDummyData from '../../../data/specialPrice_Dummy.js';
-import Product from '../Product.jsx'
+import Product from '../Product/Product.jsx'
 import './SpecialProducts.css';
 
 
@@ -18,7 +18,7 @@ export default function SpecialProducts() {
                         <Product {...product} />
                     ))}
                 </ul>
-                <button />
+                <button className='next-button' />
             </div>
         </div>
     )
