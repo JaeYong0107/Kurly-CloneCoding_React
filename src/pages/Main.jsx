@@ -1,14 +1,18 @@
 
 
 import Banner from '../components/Banner/Banner';
+import SideBar from '../components/SideBar/SideBar';
 import SpecialProducts from '../components/SpecialProducts/SpecialProducts';
 import SpecialTimeout from '../components/SpecialTimeout/SpecialTimeout';
 
 export default function MainPage() {
     return (
-        <main>
+        <main style={
+            { position: 'relative' }
+        }>
             <Banner />
             <SpecialProducts />
             <SpecialTimeout />
+            <SideBar />
         </main>)
 }
