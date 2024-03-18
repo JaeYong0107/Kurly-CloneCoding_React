@@ -1,7 +1,11 @@
+import { useSelector } from 'react-redux';
+
 
 import './SideBar.css';
 
 export default function SideBar() {
+    const recentView = useSelector(state => state.view.items);
+
     return (
         <article className="side-bar">
             <div className="sidebar-img-container">
@@ -14,9 +18,9 @@ export default function SideBar() {
             <div className='recent-container'>
                 <button className='recent-button' ><img src='up-arrow-icon.svg' /></button>
                 최근 본 상품
-                <img className='recent-img' src='https://product-image.kurly.com/cdn-cgi/image/fit=crop,width=800,height=400,quality=85/product/image/7603a12a-a742-42bd-a652-49a966e78b96.jpg' />
-                <img className='recent-img' src='https://product-image.kurly.com/cdn-cgi/image/fit=crop,width=800,height=400,quality=85/product/image/7603a12a-a742-42bd-a652-49a966e78b96.jpg' />
-                <img className='recent-img' src='https://product-image.kurly.com/cdn-cgi/image/fit=crop,width=800,height=400,quality=85/product/image/7603a12a-a742-42bd-a652-49a966e78b96.jpg' />
+                <div className='recent-img-container'>
+                    {recentView.map((item) => <img key={item.id} className='recent-img' src={item.image} />)}
+                </div>
                 <button className='recent-button'><img src='down-arrow-icon.svg' /></button>
             </div>
         </article>

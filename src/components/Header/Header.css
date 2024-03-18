@@ -65,6 +65,21 @@
     cursor: pointer;
 }
 
+.text-button-action {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    flex-shrink: 0;
+    margin-left: 20px;
+    padding: 0;
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 1.33;
+    letter-spacing: normal;
+    color: rgb(95, 0, 128);
+    cursor: pointer;
+}
+
 .search-bar {
     display: flex;
     justify-content: center;
@@ -146,4 +161,8 @@
     height: 14px;
     margin-right: 14px;
     background-image: url('../public/메뉴-icon.svg');
+}
+
+.text-button:hover {
+    color: rgb(95, 0, 128);
 }

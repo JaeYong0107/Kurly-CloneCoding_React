@@ -1,13 +1,22 @@
+import { useDispatch } from 'react-redux'
 
 import './Product.css'
+import { viewActions } from '../../store/view';
 
 export default function Product(props) {
+    const dispatch = useDispatch();
+
     const discountPrice = (100 - props.discount) * props.price / 100
+
+    function clickHandler() {
+        console.log('click')
+        dispatch(viewActions.toRecentView({ id: props.id, title: props.title, image: props.image }));
+    }
 
     return (
         <li className='product'>
             <div className='img-container'>
-                <img src={props.image} />
+                <img src={props.image} onClick={clickHandler} />
             </div>
             <button className='product-button'>
                 <img src='장바구니-icon.svg' />

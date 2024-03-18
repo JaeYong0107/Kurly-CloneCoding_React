@@ -1,7 +1,26 @@
+import { useNavigate } from 'react-router-dom';
+
 
 import './Header.css';
 
+
+let mainTextButtonClass = "text-button"
+let beautyTextButtonClass = "text-button"
 export default function Header() {
+    const navigate = useNavigate();
+
+    function toMain() {
+        navigate('/');
+        mainTextButtonClass === 'text-button' ? mainTextButtonClass += '-action' : undefined;
+        beautyTextButtonClass = "text-button"
+    }
+
+    function toBeauty() {
+        navigate('/beauty');
+        beautyTextButtonClass === 'text-button' ? beautyTextButtonClass += '-action' : undefined;
+        mainTextButtonClass = "text-button"
+    }
+
     return (
         <header className="header">
             <div id="header1">
@@ -17,8 +36,8 @@ export default function Header() {
             <div id="header2">
                 <div className="logo">
                     <img src="kurly_logo.svg" alt="마켓컬리 로고" />
-                    <button className="text-button">마켓컬리</button>
-                    <button className="text-button">뷰티컬리</button>
+                    <button className={mainTextButtonClass} onClick={toMain}>마켓컬리</button>
+                    <button className={beautyTextButtonClass} onClick={toBeauty}>뷰티컬리</button>
                 </div>
                 <div className="search-bar">
                     <input type="text" placeholder="검색어를 입력해주세요." />
