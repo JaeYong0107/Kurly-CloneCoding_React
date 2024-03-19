@@ -2,23 +2,17 @@ import { useState, useEffect } from 'react';
 
 import Product from '../Product/Product.jsx'
 import './SpecialProducts.css';
+import { fetchData } from '../../utils/http.js';
 
-
-export default function SpecialProducts() {
+export default function SpecialProducts({ url }) {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        async function fetchData() {
-            try {
-                const response = await fetch('https://kurly-copy-default-rtdb.firebaseio.com/product.json');
-                const resData = await response.json();
-                setProducts(resData);
-            } catch (error) {
-                console.error(error);
-            }
+        async function fetchProduct() {
+            const data = await fetchData(url);
+            setProducts(data);
         }
-
-        fetchData();
+        fetchProduct();
     }, [])
 
     return (

@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 import './Header.css';
+import Category from '../Category';
 
 
 let mainTextButtonClass = "text-button"
@@ -51,8 +52,9 @@ export default function Header() {
             </div>
             <nav className="category-nav">
                 <div className="category">
-                    <div />
-                    <span>카테고리</span>
+                    <img src='메뉴-icon.svg' />
+                    <div className='category-text'>카테고리</div>
+                    <Category />
                 </div>
                 <ul>
                     <li><span>신상품</span></li>

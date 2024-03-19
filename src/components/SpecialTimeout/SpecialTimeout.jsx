@@ -1,17 +1,27 @@
+import { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 
 import './SpecialTimeout.css';
+import { viewActions } from '../../store/view';
+import { fetchData } from '../../utils/http';
 
-const product = {
-    id: 'stp1',
-    image: 'https://product-image.kurly.com/cdn-cgi/image/fit=crop,width=800,height=400,quality=85/product/image/7603a12a-a742-42bd-a652-49a966e78b96.jpg',
-    title: '[압구정주꾸미] 주꾸미 볶음 2종 (택1)',
-    description: '마늘의 감칠맛이 듬뿍',
-    discount: 32,
-    price: 8900,
-    inquiry: '9,999+',
-}
+export default function SpecialTimeout({ url }) {
+    const [product, setProduct] = useState({ discount: 0 });
+    const dispatch = useDispatch();
 
-export default function SpecialTimeout() {
+    useEffect(() => {
+        async function fetchProduct() {
+            const data = await fetchData(url);
+            setProduct(data[0]);
+        }
+        fetchProduct();
+    }, [])
+
+    function clickHandler() {
+        console.log('click')
+        dispatch(viewActions.toRecentView({ id: product.id, title: product.title, image: product.image }));
+    }
+
     const discountPrice = (100 - product.discount) * product.price / 100;
 
     return (
@@ -28,7 +38,7 @@ export default function SpecialTimeout() {
                 </div>
                 <div className='stout-product'>
                     <div className='stout-img-container'>
-                        <img src={product.image} />
+                        <img src={product.image} onClick={clickHandler} />
                     </div>
                     <button className='product-button'>
                         <img src='장바구니-icon.svg' />

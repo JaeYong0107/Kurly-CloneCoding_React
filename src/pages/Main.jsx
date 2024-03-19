@@ -10,9 +10,9 @@ export default function MainPage() {
         <main style={
             { position: 'relative' }
         }>
-            <Banner />
-            <SpecialProducts />
-            <SpecialTimeout />
+            <Banner src={"배너이미지1.jpg"} />
+            <SpecialProducts url='product.json' />
+            <SpecialTimeout url='timeout.json' />
             <SideBar />
         </main>)
 }

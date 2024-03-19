@@ -8,9 +8,8 @@ export default function Beauty() {
         <main style={
             { position: 'relative' }
         }>
-            <Banner />
-            <SpecialProducts />
-            <SpecialTimeout />
+            <Banner src={"뷰티배너이미지1.jpg"} />
+            <SpecialProducts url='beautyproduct.json' />
             <SideBar />
         </ main>
     )
