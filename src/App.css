@@ -5,7 +5,16 @@
   align-items: center;
 }
 
+html {
+  font-family: "Noto Sans", "malgun gothic", 'AppleGothic', 'dotum', sans-serif;
+}
+
 body {
+  margin: 0;
+  font-size: 14px;
+}
+
+p {
   margin: 0;
 }
 

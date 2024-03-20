@@ -28,7 +28,7 @@ export default function Header() {
                 <div id="header1">
                     <a>회원가입</a>
                     <div />
-                    <Link to='/login'>로그인</Link>
+                    <Link to='member/login'>로그인</Link>
                     <div />
                     <a>
                         고객센터

@@ -1,0 +1,57 @@
+footer {
+    width: 1050px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+.left-footer {
+    display: flex;
+    flex-direction: column;
+}
+
+.left-footer h2 {
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.inquiry-me {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.inquiry-me span {
+    margin-left: 8px;
+    font-weight: normal;
+    font-size: 16px;
+}
+
+.inquiry-me button {
+    display: block;
+    width: 140px;
+    height: 40px;
+    border: 1px solid rgb(226, 226, 226);
+    border-radius: 3px;
+    line-height: 39px;
+    text-align: center;
+    margin-right: 16px;
+    margin-bottom: 16px;
+    background: none;
+}
+
+.right-footer ul li {
+    margin-left: 14px;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.right-footer ul:first-child {
+    margin-left: 0;
+}
